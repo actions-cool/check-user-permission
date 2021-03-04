@@ -7,14 +7,14 @@
 ## 🚀 How to use?
 
 ```yml
-name: PR Welcome
+name: Check User Permission
 
 on:
   issues:
     types: [opened, edited]
 
 jobs:
-  welcome:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions-cool/check-user-permission@v1.0.0
