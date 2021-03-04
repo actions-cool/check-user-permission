@@ -1,8 +1,4 @@
 {
-  "name": "action-js-template",
-  "version": "0.0.1",
-  "private": true,
-  "description": "A javascript template for rapid development of GitHub actions.",
   "main": "src/main.js",
   "scripts": {
     "package": "ncc build",
@@ -11,7 +7,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/actions-cool/action-js-template",
+    "url": "https://github.com/actions-cool/check-user-permission",
     "branch": "main"
   },
   "author": "xrkffgg",
@@ -19,7 +15,8 @@
   "dependencies": {
     "@actions/core": "^1.2.6",
     "@actions/github": "^4.0.0",
-    "@octokit/rest": "^18.0.14"
+    "@octokit/rest": "^18.0.14",
+    "actions-util": "^1.0.0"
   },
   "devDependencies": {
     "@umijs/fabric": "^2.5.6",

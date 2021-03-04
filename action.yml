@@ -1,22 +1,26 @@
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
-name: 'Action JS Template'
-description: 'A simple javascript template for rapid development of GitHub actions.'
+name: 'Check User Permission'
+description: 'A GitHub Action to check user permission of the current repository.'
 author: 'xrkffgg'
 
+# https://actions-cool.github.io/github-action-branding/
 branding:
-  # https://actions-cool.github.io/github-action-branding/
-  icon: 'file'
-  color: 'blue'
+  icon: 'user-x'
+  color: 'purple'
 
 inputs:
-  GITHUB_TOKEN:
+  token:
     description: Secret GitHub API token to use for making API requests.
     default: ${{ github.token }}
     required: true
+  require:
+    description: Test whether the user meets the required permission
 
-#outputs:
-#  result:
-#    description: action result
+outputs:
+  result:
+    description: Require result
+  user-permission:
+    description: User permission
 
 runs:
   using: 'node12'
