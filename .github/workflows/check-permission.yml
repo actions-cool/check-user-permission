@@ -13,5 +13,9 @@ jobs:
         with:
           require: 'write'
 
-      - run: echo "checkUser is ${{ steps.checkUser.outputs.user-permission }}"
-      - run: echo "checkUser permission is ${{ steps.checkUser.outputs.result }}"
+      - name: close
+        if: steps.checkUser.outputs.result == 'false'
+        uses: actions-cool/issues-helper@v2.1.2
+        with:
+          actions: 'close-issue'
+          issue-number: ${{ github.event.issue.number }}
