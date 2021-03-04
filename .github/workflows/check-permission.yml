@@ -1,0 +1,15 @@
+name: PR Welcome
+
+on:
+  issues:
+    types: [opened, edited]
+
+jobs:
+  welcome:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions-cool/check-user-permission@main
+        id: checkUser
+
+      - run: echo "checkUser is ${{ steps.checkUser.outputs.user-permission }}"
+      - run: echo "checkUser permission is ${{ steps.checkUser.outputs.result }}"
