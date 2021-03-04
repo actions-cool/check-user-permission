@@ -5994,7 +5994,7 @@ async function run() {
       core.info(`[Action Query] The user ${username} permission is ${permission}.`);
       core.setOutput('user-permission', permission);
       if (require) {
-        const result = checkPermission(needCreatorAuthority, permission);
+        const result = checkPermission(require, permission);
         core.setOutput('result', result);
       }
     } else {
