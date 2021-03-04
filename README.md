@@ -34,7 +34,9 @@ jobs:
 - `result`: When use require
 - `user-permission`
 
-> How to use? [See](https://github.com/actions-cool/issues-helper#outputs-%E4%BD%BF%E7%94%A8)
+> How to use? 
+> - https://github.com/actions-cool/issues-helper#outputs-%E4%BD%BF%E7%94%A8
+> - https://github.com/actions-cool/check-user-permission/blob/main/.github/workflows/check-permission.yml
 
 ## ⚡ Feedback
 

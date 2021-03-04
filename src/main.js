@@ -31,6 +31,7 @@ async function run() {
       core.setOutput('user-permission', permission);
       if (require) {
         const result = checkPermission(require, permission);
+        core.info(`[Action Check] The user permission check is ${result}.`);
         core.setOutput('result', result);
       }
     } else {
