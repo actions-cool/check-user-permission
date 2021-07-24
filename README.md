@@ -19,7 +19,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: skjnldsv/check-actor-permission@v1.0.0
+      - uses: skjnldsv/check-actor-permission@v2
 ```
 
 ### Input
