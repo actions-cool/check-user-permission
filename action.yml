@@ -1,7 +1,7 @@
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
-name: 'Check User Permission'
-description: 'A GitHub Action to check user permission of the current repository.'
-author: 'xrkffgg'
+name: 'Check actor permission'
+description: 'A GitHub Action to check actor permission on the current repository.'
+author: 'skjnldsv'
 
 # https://actions-cool.github.io/github-action-branding/
 branding:
