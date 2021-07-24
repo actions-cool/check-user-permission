@@ -11,14 +11,31 @@ const context = github.context;
 async function run() {
   try {
     const { owner, repo } = context.repo;
-    const supportEventNames = ['issues', 'issue_comment', 'pull_request', 'pull_request_target'];
+    const supportEventNames = [
+      'issues',
+      'issue_comment',
+      'pull_request',
+      'pull_request_target',
+      'release',
+    ];
     if (supportEventNames.includes(context.eventName)) {
       const require = core.getInput('require');
 
       const isIssue = context.eventName.startsWith('issue');
-      const username = isIssue
-        ? context.payload.issue.user.login
-        : context.payload.pull_request.user.login;
+      const isRelease = context.payload.release !== undefined;
+      let username = undefined;
+
+      if (isRelease) {
+        username = context.payload.release.author.login;
+      } else if (isIssue) {
+        username = context.payload.issue.user.login;
+      } else {
+        username = context.payload.pull_request.user.login;
+      }
+
+      if (!username) {
+        core.setFailed("Unable to find actor's username");
+      }
 
       const {
         data: { permission },
@@ -27,12 +44,19 @@ async function run() {
         repo,
         username,
       });
+
       core.info(`[Action Query] The user ${username} permission is ${permission}.`);
       core.setOutput('user-permission', permission);
+
       if (require) {
         const result = checkPermission(require, permission);
         core.info(`[Action Check] The user permission check is ${result}.`);
         core.setOutput('result', result);
+
+        // If required, we fail if it does not match the required level
+        if (!result) {
+          core.setFailed('The user required level is not sufficient');
+        }
       }
     } else {
       core.setFailed(
