@@ -1,8 +1,7 @@
 # 👮 Check User Permission
 
-![](https://img.shields.io/github/workflow/status/actions-cool/check-user-permission/CI?style=flat-square)
 [![](https://img.shields.io/badge/marketplace-check--user--permission-blueviolet?style=flat-square)](https://github.com/marketplace/actions/check-user-permission)
-[![](https://img.shields.io/github/v/release/actions-cool/check-user-permission?style=flat-square&color=orange)](https://github.com/actions-cool/check-user-permission/releases)
+[![](https://img.shields.io/github/v/release/skjnldsv/check-user-permission?style=flat-square&color=orange)](https://github.com/actions-cool/check-user-permission/releases)
 
 ## 🚀 How to use?
 
@@ -38,23 +37,15 @@ jobs:
 - `user-permission`
 
 > How to use? 
-> - https://github.com/actions-cool/issues-helper#outputs-%E4%BD%BF%E7%94%A8
-> - https://github.com/actions-cool/check-user-permission/blob/main/.github/workflows/check-permission.yml
+> - https://github.com/skjnldsv/issues-helper#outputs-%E4%BD%BF%E7%94%A8
+> - https://github.com/skjnldsv/check-user-permission/blob/main/.github/workflows/check-permission.yml
 
 ## ⚡ Feedback
 
 You are very welcome to try it out and put forward your comments. You can use the following methods:
 
-- Report bugs or consult with [Issue](https://github.com/actions-cool/check-user-permissionissues)
-- Submit [Pull Request](https://github.com/actions-cool/check-user-permission/pulls) to improve the code of `check-user-permission`
-
-欢迎加入 钉钉交流群
-
-![](https://github.com/actions-cool/resources/blob/main/dingding.jpeg?raw=true)
-
-## Changelog
-
-[CHANGELOG](./CHANGELOG.md)
+- Report bugs or consult with [Issue](https://github.com/skjnldsv/check-user-permissionissues)
+- Submit [Pull Request](https://github.com/skjnldsv/check-user-permission/pulls) to improve the code of `check-user-permission`
 
 ## LICENSE
 
