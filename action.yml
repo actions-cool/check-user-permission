@@ -15,6 +15,7 @@ inputs:
     required: true
   require:
     description: Test whether the user meets the required permission
+    required: false
 
 outputs:
   result:
