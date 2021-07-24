@@ -37,7 +37,6 @@ jobs:
 - `user-permission`
 
 > How to use? 
-> - https://github.com/skjnldsv/issues-helper#outputs-%E4%BD%BF%E7%94%A8
 > - https://github.com/skjnldsv/check-user-permission/blob/main/.github/workflows/check-permission.yml
 
 ## ⚡ Feedback
