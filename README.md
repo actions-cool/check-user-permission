@@ -1,7 +1,7 @@
 # 👮 Check User Permission
 
-[![](https://img.shields.io/badge/marketplace-check--user--permission-blueviolet?style=flat-square)](https://github.com/marketplace/actions/check-user-permission)
-[![](https://img.shields.io/github/v/release/skjnldsv/check-user-permission?style=flat-square&color=orange)](https://github.com/actions-cool/check-user-permission/releases)
+[![](https://img.shields.io/badge/marketplace-check--user--permission-blueviolet?style=flat-square)](https://github.com/marketplace/actions/check-actor-permission)
+[![](https://img.shields.io/github/v/release/skjnldsv/check-actor-permission?style=flat-square&color=orange)](https://github.com/actions-cool/check-user-permission/releases)
 
 ## 🚀 How to use?
 
@@ -19,7 +19,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-cool/check-user-permission@v1.0.0
+      - uses: skjnldsv/check-actor-permission@v1.0.0
 ```
 
 ### Input
@@ -37,7 +37,7 @@ jobs:
 - `user-permission`
 
 > How to use? 
-> - https://github.com/skjnldsv/check-user-permission/blob/main/.github/workflows/check-permission.yml
+> - https://github.com/skjnldsv/check-actor-permission/blob/main/.github/workflows/check-permission.yml
 
 ## ⚡ Feedback
 
