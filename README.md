@@ -12,6 +12,9 @@ name: Check User Permission
 on:
   issues:
     types: [opened, edited]
+  release:
+    types: [published]
+
 
 jobs:
   check:

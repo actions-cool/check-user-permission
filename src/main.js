@@ -11,33 +11,33 @@ const context = github.context;
 async function run() {
   try {
     const { owner, repo } = context.repo;
-    const supportEventNames = ['issues', 'issue_comment', 'pull_request', 'pull_request_target'];
-    if (supportEventNames.includes(context.eventName)) {
-      const require = core.getInput('require');
+    const require = core.getInput('require');
+    const username = context.actor;
 
-      const isIssue = context.eventName.startsWith('issue');
-      const username = isIssue
-        ? context.payload.issue.user.login
-        : context.payload.pull_request.user.login;
+    if (!username || username.trim() === '') {
+      core.setFailed('Invalid username');
+    }
 
-      const {
-        data: { permission },
-      } = await octokit.repos.getCollaboratorPermissionLevel({
-        owner,
-        repo,
-        username,
-      });
-      core.info(`[Action Query] The user ${username} permission is ${permission}.`);
-      core.setOutput('user-permission', permission);
-      if (require) {
-        const result = checkPermission(require, permission);
-        core.info(`[Action Check] The user permission check is ${result}.`);
-        core.setOutput('result', result);
+    const {
+      data: { permission },
+    } = await octokit.repos.getCollaboratorPermissionLevel({
+      owner,
+      repo,
+      username,
+    });
+
+    core.info(`[Action Query] The user ${username} permission is ${permission}.`);
+    core.setOutput('user-permission', permission);
+
+    if (require) {
+      const result = checkPermission(require, permission);
+      core.info(`[Action Check] The user permission check is ${result}.`);
+      core.setOutput('result', result);
+
+      // If required, we fail if it does not match the required level
+      if (!result) {
+        core.setFailed('The user required level is not sufficient');
       }
-    } else {
-      core.setFailed(
-        'This Action now only support "issues" "issue_comment" "pull_request" "pull_request_target". If you need other, you can open a issue to https://github.com/actions-cool/check-user-permission',
-      );
     }
   } catch (error) {
     core.setFailed(error.message);
