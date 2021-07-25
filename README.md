@@ -20,7 +20,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-cool/check-user-permission@v1.0.0
+      - uses: actions-cool/check-user-permission@v1.1.0
 ```
 
 ### Input
@@ -37,7 +37,7 @@ jobs:
 - `result`: When use require
 - `user-permission`
 
-> How to use? 
+> How to use?
 > - https://github.com/actions-cool/issues-helper#outputs-%E4%BD%BF%E7%94%A8
 > - https://github.com/actions-cool/check-user-permission/blob/main/.github/workflows/check-permission.yml
 

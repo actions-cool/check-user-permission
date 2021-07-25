@@ -15,7 +15,7 @@ async function run() {
     const username = context.actor;
 
     if (!username || username.trim() === '') {
-      core.setFailed('Invalid username');
+      core.setFailed('[Action Query] Invalid username!');
     }
 
     const {
@@ -26,7 +26,7 @@ async function run() {
       username,
     });
 
-    core.info(`[Action Query] The user ${username} permission is ${permission}.`);
+    core.info(`[Action Query] The user: ${username} permission is ${permission}.`);
     core.setOutput('user-permission', permission);
 
     if (require) {
@@ -36,7 +36,7 @@ async function run() {
 
       // If required, we fail if it does not match the required level
       if (!result) {
-        core.setFailed('The user required level is not sufficient');
+        core.setFailed(`[Action Check] The user: ${username} required level is not sufficient.`);
       }
     }
   } catch (error) {
