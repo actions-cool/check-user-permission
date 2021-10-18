@@ -10,6 +10,8 @@
 
 ## v1.2.0
 
+`2021.10.18`
+
 - 🚀 feat: add `check-bot`
 - 🚀 feat: add `username`
 
