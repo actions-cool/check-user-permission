@@ -31,7 +31,7 @@ async function run() {
 
     const checkBot = core.getInput('check-bot');
 
-    if (checkBot) {
+    if (checkBot == 'true') {
       const { data } = await octokit.users.getByUsername({
         username,
       });

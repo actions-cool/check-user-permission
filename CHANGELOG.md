@@ -1,4 +1,17 @@
+<!--
+🐞 Bug fix
+🚀 New feature
+💄 Perf
+📝 Docs
+⚡️ Code style
+-->
+
 # Changelog
+
+## v1.2.0
+
+- 🚀 feat: add `check-bot`
+- 🚀 feat: add `username`
 
 ## v1.1.0
 

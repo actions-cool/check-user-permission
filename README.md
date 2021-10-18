@@ -29,6 +29,8 @@ jobs:
 | -- | -- | -- | -- |
 | token | GitHub token | string | ✖ |
 | require | Test whether the user meets the required permission | string | ✖ |
+| username | Obtained from the context by default, can also be customized to pass in | string | ✖ |
+| check-bot | Check the user whether a bot | boolean | ✖ |
 
 - User permission: `admin` > `write` > `read`
 
