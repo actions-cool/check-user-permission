@@ -7555,25 +7555,29 @@ async function run() {
 
     const checkBot = core.getInput('check-bot');
 
+    let result;
+
     if (checkBot == 'true') {
       const { data } = await octokit.users.getByUsername({
         username,
       });
-      const isBot = data.type === 'Bot';
-
-      core.info(`[Action Check] The user check-bot is ${isBot}.`);
-      core.setOutput('result', isBot);
-    } else if (require) {
-      const result = checkPermission(require, permission);
-      core.info(`[Action Check] The user permission check is ${result}.`);
-      core.setOutput('result', result);
-
-      // If required, we fail if it does not match the required level
-      if (!result) {
-        core.setFailed(`[Action Check] The user: ${username} required level is not sufficient.`);
+      if (data.type === 'Bot') {
+        result = true;
+        core.info(`[Action Check] The user check-bot is ${isBot}.`);
+      } else if (require) {
+        result = checkPermission(require, permission);
       }
+    } else if (require) {
+      result = checkPermission(require, permission);
     }
 
+    // If required, we fail if it does not match the required level
+    if (require && !result) {
+      core.setFailed(`[Action Check] The user: ${username} required level is not sufficient.`);
+    }
+
+    core.info(`[Action Check] The user permission check is ${result}.`);
+    core.setOutput('result', result);
     core.info(THANKS);
   } catch (error) {
     core.setFailed(error.message);
