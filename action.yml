@@ -13,6 +13,8 @@ inputs:
     description: Secret GitHub API token to use for making API requests.
     default: ${{ github.token }}
     required: true
+  username:
+    description: Test username in this repo
   require:
     description: Test whether the user meets the required permission
     required: false
