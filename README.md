@@ -20,7 +20,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-cool/check-user-permission@v1.1.0
+      - uses: actions-cool/check-user-permission@v1
 ```
 
 ### Input
