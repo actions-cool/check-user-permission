@@ -16,6 +16,8 @@ inputs:
   require:
     description: Test whether the user meets the required permission
     required: false
+  check-bot:
+    description: Check whether the user is a bot
 
 outputs:
   result:

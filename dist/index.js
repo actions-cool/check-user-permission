@@ -7546,7 +7546,17 @@ async function run() {
     core.info(`[Action Query] The user: ${username} permission is ${permission}.`);
     core.setOutput('user-permission', permission);
 
-    if (require) {
+    const checkBot = core.getInput('check-bot');
+
+    if (checkBot) {
+      const { data } = await octokit.users.getByUsername({
+        username,
+      });
+      const isBot = data.type === 'Bot';
+
+      core.info(`[Action Check] The user check-bot is ${isBot}.`);
+      core.setOutput('result', isBot);
+    } else if (require) {
       const result = checkPermission(require, permission);
       core.info(`[Action Check] The user permission check is ${result}.`);
       core.setOutput('result', result);
