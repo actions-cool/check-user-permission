@@ -39,7 +39,7 @@ async function run() {
       });
       if (data.type === 'Bot') {
         result = true;
-        core.info(`[Action Check] The user check-bot is ${isBot}.`);
+        core.info(`[Action Check] The user check-bot is ${result}.`);
       } else if (require) {
         result = checkPermission(require, permission);
       }
