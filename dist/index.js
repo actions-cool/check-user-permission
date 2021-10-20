@@ -7573,7 +7573,7 @@ async function run() {
 
     // If required, we fail if it does not match the required level
     if (require && !result) {
-      core.setFailed(`[Action Check] The user: ${username} required level is not sufficient.`);
+      core.info(`[Action Check] The user: ${username} required level is not sufficient.`);
     }
 
     core.info(`[Action Check] The user permission check is ${result}.`);

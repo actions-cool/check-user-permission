@@ -8,6 +8,10 @@
 
 # Changelog
 
+## v1.2.2
+
+- 🐞 fix: setFailed.
+
 ## v1.2.1
 
 `2021.10.18`
