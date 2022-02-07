@@ -14,7 +14,7 @@ jobs:
           require: 'write'
 
       - name: close
-        if: steps.checkUser.outputs.result == 'false'
+        if: steps.checkUser.outputs.check-result == 'false'
         uses: actions-cool/issues-helper@v2.1.2
         with:
           actions: 'close-issue'
