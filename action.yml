@@ -1,5 +1,5 @@
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
-name: 'Check User Permission'
+name: 'Check User'
 description: 'A GitHub Action to check user permission of the current repository.'
 author: 'xrkffgg'
 
@@ -20,12 +20,16 @@ inputs:
     required: false
   check-bot:
     description: Check whether the user is a bot
+  check-contributor:
+    description: Check whether the user is contributor
 
 outputs:
-  result:
-    description: Require result
   user-permission:
     description: User permission
+  require-result:
+    description: The result of require
+  check-result:
+    description: The result of check
 
 runs:
   using: 'node12'

@@ -20,7 +20,7 @@ jobs:
   check:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions-cool/check-user-permission@v1
+      - uses: actions-cool/check-user-permission@v2
 ```
 
 ### Input
@@ -30,14 +30,17 @@ jobs:
 | token | GitHub token | string | ✖ |
 | require | Test whether the user meets the required permission | string | ✖ |
 | username | Obtained from the context by default, can also be customized to pass in | string | ✖ |
-| check-bot | Check the user whether a bot | boolean | ✖ |
+| check-bot | Check whether the user is a bot | boolean | ✖ |
+| check-contributor | Check whether the user is contributor | boolean | ✖ |
 
 - User permission: `admin` > `write` > `read`
 
 ### Output
 
-- `result`: When use require
-- `user-permission`
+- `user-permission`: `read` | `write` | `admin`
+- `require-result`: The result of require
+- `check-result`: The result of check
+
 
 > How to use?
 > - https://github.com/actions-cool/issues-helper#outputs-%E4%BD%BF%E7%94%A8

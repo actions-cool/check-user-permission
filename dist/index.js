@@ -7554,30 +7554,53 @@ async function run() {
     core.setOutput('user-permission', permission);
 
     const checkBot = core.getInput('check-bot');
+    const checkContributor = core.getInput('check-contributor');
 
-    let result;
+    let requireResult;
+    let checkResult = false;
+
+    async function queryContributors(page = 1) {
+      let { data: contributors } = await octokit.repos.listContributors({
+        owner,
+        repo,
+        per_page: 100,
+        page,
+      });
+
+      if (contributors.length >= 100) {
+        contributors = contributors.concat(await queryContributors(page + 1));
+      }
+
+      return contributors;
+    }
 
     if (checkBot == 'true') {
       const { data } = await octokit.users.getByUsername({
         username,
       });
       if (data.type === 'Bot') {
-        result = true;
-        core.info(`[Action Check] The user check-bot is ${result}.`);
-      } else if (require) {
-        result = checkPermission(require, permission);
+        checkResult = true;
       }
-    } else if (require) {
-      result = checkPermission(require, permission);
+    } else if (checkContributor == 'true') {
+      let contributors = await queryContributors();
+      contributors = contributors.map(({ login }) => login);
+      console.log(JSON.stringify(contributors));
+      if (contributors.length) {
+        checkResult = contributors.includes(username);
+      }
     }
 
-    // If required, we fail if it does not match the required level
-    if (require && !result) {
-      core.info(`[Action Check] The user: ${username} required level is not sufficient.`);
+    if (checkBot || checkContributor) {
+      core.info(`[Action Check] The check result is ${checkResult}.`);
+      core.setOutput('check-result', checkResult);
     }
 
-    core.info(`[Action Check] The user permission check is ${result}.`);
-    core.setOutput('result', result);
+    if (require) {
+      requireResult = checkPermission(require, permission);
+      core.info(`[Action Require] The ${username} permission check is ${requireResult}.`);
+      core.setOutput('require-result', requireResult);
+    }
+
     core.info(THANKS);
   } catch (error) {
     core.setFailed(error.message);

@@ -4,9 +4,17 @@
 💄 Perf
 📝 Docs
 ⚡️ Code style
+🛠 refactor
 -->
 
 # Changelog
+
+## v2.0.0
+
+`2022.02.07`
+
+- 🛠 refactor: change `result` to `require-result`.
+- 🚀 feat: add `check-result` for `check-contributor`.
 
 ## v1.2.2
 
