@@ -1,5 +1,5 @@
 # https://docs.github.com/en/actions/creating-actions/metadata-syntax-for-github-actions
-name: 'Check User'
+name: 'Check User Permission'
 description: 'A GitHub Action to check user permission of the current repository.'
 author: 'xrkffgg'
 
