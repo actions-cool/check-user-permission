@@ -42,6 +42,7 @@ jobs:
 > How to use?
 > - https://github.com/actions-cool/issues-helper#outputs-%E4%BD%BF%E7%94%A8
 > - https://github.com/actions-cool/check-user-permission/blob/main/.github/workflows/check-permission.yml
+> - https://github.com/actions-cool/test-ci/blob/main/.github/workflows/test-check-user.yml
 
 ## ⚡ Feedback
 
