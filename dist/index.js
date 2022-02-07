@@ -7582,7 +7582,8 @@ async function run() {
         checkResult = true;
       }
     } else if (checkContributor == 'true') {
-      const contributors = await queryContributors().map(({ login }) => login);
+      let contributors = await queryContributors();
+      contributors = contributors.map(({ login }) => login);
       console.log(JSON.stringify(contributors));
       if (contributors.length) {
         checkResult = contributors.includes(username);
