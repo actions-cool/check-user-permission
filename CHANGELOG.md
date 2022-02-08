@@ -9,12 +9,18 @@
 
 # Changelog
 
+## v2.0.1
+
+`2022.02.08`
+
+- 🐞 fix: remove console.log.
+
 ## v2.0.0
 
 `2022.02.07`
 
-- 🛠 refactor: change `result` to `require-result`.
-- 🚀 feat: add `check-result` for `check-contributor`.
+- 🛠 refactor: change `result` to `require-result`. [#5](https://github.com/actions-cool/check-user-permission/pull/5)
+- 🚀 feat: add `check-result` for `check-contributor`. [#5](https://github.com/actions-cool/check-user-permission/pull/5)
 
 ## v1.2.2
 
