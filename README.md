@@ -33,7 +33,7 @@ jobs:
 - User permission: `admin` > `write` > `read`
 - `username` support [github context](https://docs.github.com/en/actions/learn-github-actions/contexts#github-context)
   - `actor`: The Default
-  - `triggering_actor`: The username of the user that initiated the workflow run even re-run. 
+  - `triggering_actor`: The username of the user that initiated the workflow run even re-run
   - Example: `username: github.triggering_actor`
 
 ### Output
