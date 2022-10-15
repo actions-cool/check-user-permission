@@ -3,10 +3,9 @@ const { Octokit } = require('@octokit/rest');
 const github = require('@actions/github');
 const { checkPermission } = require('actions-util');
 
-// **********************************************************
 const token = core.getInput('token');
 const octokit = new Octokit({ auth: `token ${token}` });
-const context = github.context;
+const { context } = github;
 
 async function run() {
   try {

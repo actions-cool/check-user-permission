@@ -1,16 +1,18 @@
 {
   "main": "src/main.js",
   "scripts": {
-    "package": "ncc build",
-    "format": "prettier --write src/*.js",
-    "format-check": "prettier --check src/*.js"
+    "build": "ncc build",
+    "lint": "eslint src",
+    "lint:fix": "eslint --fix src",
+    "prettier": "prettier --check src/*.js",
+    "prettier:fix": "prettier --write src/*.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/actions-cool/check-user-permission",
     "branch": "main"
   },
-  "author": "xrkffgg",
+  "author": "skjnldsv",
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^1.2.6",
@@ -21,6 +23,9 @@
   "devDependencies": {
     "@umijs/fabric": "^3.0.0",
     "@vercel/ncc": "^0.27.0",
+    "eslint": "^8.25.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.26.0",
     "prettier": "^2.2.1"
   }
 }
