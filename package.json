@@ -19,7 +19,7 @@
     "actions-util": "^1.0.0"
   },
   "devDependencies": {
-    "@umijs/fabric": "^2.5.6",
+    "@umijs/fabric": "^3.0.0",
     "@vercel/ncc": "^0.27.0",
     "prettier": "^2.2.1"
   }
