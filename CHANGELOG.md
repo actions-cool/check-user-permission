@@ -9,6 +9,10 @@
 
 # Changelog
 
+## v2.2.0
+
+- 💄 chore: use node 16. [#10](https://github.com/actions-cool/check-user-permission/pull/10) [@afalhambra](https://github.com/afalhambra)
+
 ## v2.0.1
 
 `2022.02.08`
