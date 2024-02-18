@@ -9,6 +9,12 @@
 
 # Changelog
 
+## v2.2.1
+
+`2024.02.18`
+
+- 💄 chore: use node 20. [#12](https://github.com/actions-cool/check-user-permission/pull/12) [@ZheSun88](https://github.com/ZheSun88)
+
 ## v2.2.0
 
 `2022.10.19`
