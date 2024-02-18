@@ -39,8 +39,8 @@ jobs:
 ### Output
 
 - `user-permission`: `read` | `write` | `admin`
-- `require-result`: The result of require
-- `check-result`: The result of check
+- `require-result`: The result of require `true` | `false`
+- `check-result`: The result of check `true` | `false`
 
 
 > How to use?
