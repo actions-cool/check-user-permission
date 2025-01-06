@@ -80,12 +80,11 @@ async function run() {
     }
 
     const errorIfMissing = core.getInput('error-if-missing');
-    if (checkFailed && (errorIfMissing === 'true')) {
+    if (checkFailed && errorIfMissing === 'true') {
       core.setFailed('The required check failed.');
     }
 
     core.info(THANKS);
-
   } catch (error) {
     core.setFailed(error.message);
   }
