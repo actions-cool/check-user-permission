@@ -35608,14 +35608,14 @@ async function run() {
       return contributors;
     }
 
-    if (checkBot == 'true') {
+    if (checkBot === 'true') {
       const { data } = await octokit.users.getByUsername({
         username,
       });
       if (data.type === 'Bot') {
         checkResult = true;
       }
-    } else if (checkContributor == 'true') {
+    } else if (checkContributor === 'true') {
       let contributors = await queryContributors();
       contributors = contributors.map(({ login }) => login);
       if (contributors.length) {
@@ -35623,15 +35623,23 @@ async function run() {
       }
     }
 
+    checkFailed = false;
     if (checkBot || checkContributor) {
       core.info(`[Action Check] The check result is ${checkResult}.`);
       core.setOutput('check-result', checkResult);
+      checkFailed = checkFailed || !checkResult;
     }
 
     if (require) {
       requireResult = checkPermission(require, permission);
       core.info(`[Action Require] The ${username} permission check is ${requireResult}.`);
       core.setOutput('require-result', requireResult);
+      checkFailed = checkFailed || !requireResult;
+    }
+
+    const errorIfMissing = core.getInput('error-if-missing');
+    if (checkFailed && errorIfMissing === 'true') {
+      core.setFailed('The required check failed.');
     }
 
     core.info(THANKS);

@@ -9,6 +9,12 @@
 
 # Changelog
 
+## v2.3.0
+
+`2025.01.07`
+
+- 🚀 feat: support `error-if-missing`. [#14](https://github.com/actions-cool/check-user-permission/pull/14) [@nicgrayson](https://github.com/nicgrayson) [@LukeLalor](https://github.com/LukeLalor)
+
 ## v2.2.1
 
 `2024.02.18`

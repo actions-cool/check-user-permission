@@ -22,6 +22,9 @@ inputs:
     description: Check whether the user is a bot
   check-contributor:
     description: Check whether the user is contributor
+  error-if-missing:
+    description: Error if require or check if false
+    required: false
 
 outputs:
   user-permission:
