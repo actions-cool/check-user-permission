@@ -29,6 +29,7 @@ jobs:
 | username | Obtained from the context by default, can also be customized to pass in | string | ✖ |
 | check-bot | Check whether the user is a bot | boolean | ✖ |
 | check-contributor | Check whether the user is contributor | boolean | ✖ |
+| error-if-missing | Error if require or check if false | boolean | ✖ |
 
 - User permission: `admin` > `write` > `read`
 - `username` support [github context](https://docs.github.com/en/actions/learn-github-actions/contexts#github-context)
