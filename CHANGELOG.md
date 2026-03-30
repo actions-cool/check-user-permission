@@ -9,6 +9,12 @@
 
 # Changelog
 
+## v2.4.0
+
+`2026.3.30`
+
+- chore: bump node to 24 [#15](https://github.com/actions-cool/check-user-permission/pull/15) 
+
 ## v2.3.0
 
 `2025.01.07`
